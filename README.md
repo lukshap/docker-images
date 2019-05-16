@@ -93,17 +93,6 @@ If you're using an external database, you can configure JIRA to make a backup au
 
 Read more about data recovery and backups: [https://confluence.atlassian.com/adminjiraserver071/backing-up-data-802592964.html](https://confluence.atlassian.com/adminjiraserver071/backing-up-data-802592964.html)
 
-# Versioning
-
-The `latest` tag matches the most recent release of Atlassian JIRA Core. Thus `dchevell/jira-core:latest` will use the newest version of JIRA available.
-
-Alternatively you can use a specific major, major.minor, or major.minor.patch version of JIRA Core by using a version number tag: 
-
-* `dchevell/jira-core:7`
-* `dchevell/jira-core:7.5`
-* `dchevell/jira-core:7.5.0`
-
-All versions from 7.0+ are available
 # Support
 
 This Docker container is unsupported and is intended for illustration purposes only.
