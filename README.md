@@ -66,3 +66,23 @@ If you need to pass additional JVM arguments to JIRA, such as specifying a custo
 Example:
 
     $> docker run -e JVM_SUPPORT_RECOMMENDED_ARGS=-Djavax.net.ssl.trustStore=/var/atlassian/application-data/jira/cacerts -v jiraVolume:/var/atlassian/application-data/jira --name="jira" -d -p 8080:8080 dchevell/jira-core
+
+## DB config configuration (for those who use external DB ONLY)
+
+If you use the external DB you have to provide the info for the connection
+
+* `EXTDB_HOST`
+
+   The DB host's url or IP
+   
+* `EXTDB_NAME`
+
+   The DB name
+
+* `EXTDB_USER`
+
+   The DB user for connection to DB name
+   
+* `EXTDB_PASSWORD`
+
+   The DB EXTDB_USER password
