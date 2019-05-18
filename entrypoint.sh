@@ -20,8 +20,7 @@ CATALINA_OPTS="${CATALINA_OPTS} -DcatalinaContextPath=${CATALINA_CONTEXT_PATH}"
 
 export JAVA_OPTS="${JAVA_OPTS} ${CATALINA_OPTS}"
 
-
-# Start Bamboo as the correct user
+# Start JIRA as the correct user
 if [ "${UID}" -eq 0 ]; then
     echo "User is currently root. Will change directory ownership to ${RUN_USER}:${RUN_GROUP}, then downgrade permission to ${RUN_USER}"
     PERMISSIONS_SIGNATURE=$(stat -c "%u:%U:%a" "${JIRA_HOME}")

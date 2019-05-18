@@ -10,21 +10,15 @@ This Docker container makes it easy to get an instance of JIRA Core up and runni
 
 # Quick Start
 
-For the `JIRA_HOME` directory that is used to store application data (amongst other things) we recommend mounting a host directory as a [data volume](https://docs.docker.com/engine/tutorials/dockervolumes/#/data-volumes), or via a named volume if using a docker version >= 1.9. 
-
 To get started you can use a data volume, or named volumes. In this example we'll use named volumes.
 
-    $> docker volume create --name jiraVolume
-    $> docker run -v jiraVolume:/var/atlassian/application-data/jira --name="jira" -d -p 8080:8080 dchevell/jira-core
+    $> docker run --name="jira" -d -p 8080:8080 lukshap/actonic:jira-8.0.0-extDB
 
 
 **Success**. JIRA is now available on [http://localhost:8080](http://localhost:8080)*
 
 Please ensure your container has the necessary resources allocated to it. We recommend 2GiB of memory allocated to accommodate the application server. See [System Requirements](https://confluence.atlassian.com/adminjiraserver071/jira-applications-installation-requirements-802592164.html) for further information.
     
-
-_* Note: If you are using `docker-machine` on Mac OS X, please use `open http://$(docker-machine ip default):8080` instead._
-
 ## Memory / Heap Size
 
 If you need to override JIRA's default memory allocation, you can control the minimum heap (Xms) and maximum heap (Xmx) via the below environment variables.
@@ -72,28 +66,3 @@ If you need to pass additional JVM arguments to JIRA, such as specifying a custo
 Example:
 
     $> docker run -e JVM_SUPPORT_RECOMMENDED_ARGS=-Djavax.net.ssl.trustStore=/var/atlassian/application-data/jira/cacerts -v jiraVolume:/var/atlassian/application-data/jira --name="jira" -d -p 8080:8080 dchevell/jira-core
-    
-# Upgrade
-
-To upgrade to a more recent version of JIRA you can simply stop the `jira` container and start a new one based on a more recent image:
-
-    $> docker stop jira
-    $> docker rm jira
-    $> docker run ... (See above)
-
-As your data is stored in the data volume directory on the host it will still  be available after the upgrade.
-
-_Note: Please make sure that you **don't** accidentally remove the `jira` container and its volumes using the `-v` option._
-
-# Backup
-
-For evaluations you can use the built-in database that will store its files in the JIRA home directory. In that case it is sufficient to create a backup archive of the docker volume.
-
-If you're using an external database, you can configure JIRA to make a backup automatically each night. This will back up the current state, including the database to the `jiraVolume` docker volume, which can then be archived. Alternatively you can backup the database separately, and continue to create a backup archive of the docker volume to back up the JIRA Home directory.
-
-Read more about data recovery and backups: [https://confluence.atlassian.com/adminjiraserver071/backing-up-data-802592964.html](https://confluence.atlassian.com/adminjiraserver071/backing-up-data-802592964.html)
-
-# Support
-
-This Docker container is unsupported and is intended for illustration purposes only.
-# docker-images
