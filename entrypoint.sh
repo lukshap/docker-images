@@ -20,6 +20,11 @@ CATALINA_OPTS="${CATALINA_OPTS} -DcatalinaContextPath=${CATALINA_CONTEXT_PATH}"
 
 export JAVA_OPTS="${JAVA_OPTS} ${CATALINA_OPTS}"
 
+sed -i -e "s/EXTDB_HOST/${EXTDB_HOST}/" ${JIRA_HOME}/dbconfig.xml \
+&& sed -i -e "s/EXTDB_NAME/${EXTDB_NAME}/" ${JIRA_HOME}/dbconfig.xml \
+&& sed -i -e "s/EXTDB_USER/${EXTDB_USER}/" ${JIRA_HOME}/dbconfig.xml \
+&& sed -i -e "s/EXTDB_PASSWORD/${EXTDB_PASSWORD}/" ${JIRA_HOME}/dbconfig.xml
+
 # Start JIRA as the correct user
 if [ "${UID}" -eq 0 ]; then
     echo "User is currently root. Will change directory ownership to ${RUN_USER}:${RUN_GROUP}, then downgrade permission to ${RUN_USER}"

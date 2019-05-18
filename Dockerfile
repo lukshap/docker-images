@@ -14,6 +14,7 @@ CMD ["/entrypoint.sh", "-fg"]
 
 COPY entrypoint.sh              			                /entrypoint.sh
 COPY mysql-connector-java-5.1.47.jar           		        ${JIRA_INSTALL_DIR}/lib/
+COPY dbconfig.xml           		                        ${JIRA_HOME}
 
 ARG JIRA_VERSION=8.0.0
 ARG DOWNLOAD_URL=https://product-downloads.atlassian.com/software/jira/downloads/atlassian-jira-core-${JIRA_VERSION}.tar.gz
@@ -24,6 +25,4 @@ RUN mkdir -p                             ${JIRA_INSTALL_DIR} \
     && sed -i -e 's/^JVM_SUPPORT_RECOMMENDED_ARGS=""$/: \${JVM_SUPPORT_RECOMMENDED_ARGS:=""}/g' ${JIRA_INSTALL_DIR}/bin/setenv.sh \
     && sed -i -e 's/^JVM_\(.*\)_MEMORY="\(.*\)"$/: \${JVM_\1_MEMORY:=\2}/g' ${JIRA_INSTALL_DIR}/bin/setenv.sh \
     && sed -i -e 's/port="8080"/port="8080" secure="${catalinaConnectorSecure}" scheme="${catalinaConnectorScheme}" proxyName="${catalinaConnectorProxyName}" proxyPort="${catalinaConnectorProxyPort}"/' ${JIRA_INSTALL_DIR}/conf/server.xml \
-    && sed -i -e 's/Context path=""/Context path="${catalinaContextPath}"/' ${JIRA_INSTALL_DIR}/conf/server.xml \
-    && sed -i -e 's/kubernetes.actonic.io/:  \${EXTDB_HOST:=""}/' ${JIRA_HOME}/dbconfig.xml \
-    && sed -i -e 's/jiradb/:  \${EXTDB_name:=""}/' ${JIRA_HOME}/dbconfig.xml \
+    && sed -i -e 's/Context path=""/Context path="${catalinaContextPath}"/' ${JIRA_INSTALL_DIR}/conf/server.xml
