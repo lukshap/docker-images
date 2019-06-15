@@ -14,7 +14,7 @@ CMD ["/entrypoint.sh", "-fg"]
 
 COPY entrypoint.sh              			                /entrypoint.sh
 COPY mysql-connector-java-5.1.47.jar           		        ${CONFLUENCE_INSTALL_DIR}/confluence/WEB-INF/lib/
-#COPY dbconfig.xml           		                        ${JIRA_HOME}
+COPY confluence.cfg.xml           		                    ${CONFLUENCE_HOME}
 
 ARG CONFLUENCE_VERSION=6.13.5
 ARG DOWNLOAD_URL=https://www.atlassian.com/software/confluence/downloads/binary/atlassian-confluence-${CONFLUENCE_VERSION}.tar.gz
