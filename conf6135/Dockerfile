@@ -13,7 +13,7 @@ EXPOSE 8090
 CMD ["/entrypoint.sh", "-fg"]
 
 COPY entrypoint.sh              			                /entrypoint.sh
-COPY mysql-connector-java-5.1.47.jar           		        ${JIRA_INSTALL_DIR}/lib/
+COPY mysql-connector-java-5.1.47.jar           		        ${CONFLUENCE_INSTALL_DIR}/confluence/WEB-INF/lib/
 #COPY dbconfig.xml           		                        ${JIRA_HOME}
 
 ARG CONFLUENCE_VERSION=6.13.5
