@@ -21,10 +21,10 @@ CATALINA_OPTS="${CATALINA_OPTS} -DcatalinaContextPath=${CATALINA_CONTEXT_PATH}"
 export JAVA_OPTS="${JAVA_OPTS} ${CATALINA_OPTS}"
 export JAVA_HOME="${CONFLUENCE_INSTALL_DIR}/oracle_java_8"
 
-#sed -i -e "s/EXTDB_HOST/${EXTDB_HOST}/" ${JIRA_HOME}/dbconfig.xml \
-#&& sed -i -e "s/EXTDB_NAME/${EXTDB_NAME}/" ${JIRA_HOME}/dbconfig.xml \
-#&& sed -i -e "s/EXTDB_USER/${EXTDB_USER}/" ${JIRA_HOME}/dbconfig.xml \
-#&& sed -i -e "s/EXTDB_PASSWORD/${EXTDB_PASSWORD}/" ${JIRA_HOME}/dbconfig.xml\
+sed -i -e "s/EXTDB_HOST/${EXTDB_HOST}/" ${CONFLUENCE_HOME}/confluence.cfg.xml \
+&& sed -i -e "s/EXTDB_NAME/${EXTDB_NAME}/" ${CONFLUENCE_HOME}/confluence.cfg.xml \
+&& sed -i -e "s/EXTDB_USER/${EXTDB_USER}/" ${CONFLUENCE_HOME}/confluence.cfg.xml \
+&& sed -i -e "s/EXTDB_PASSWORD/${EXTDB_PASSWORD}/" ${CONFLUENCE_HOME}/confluence.cfg.xml
 
 # Start CONFLUENCE as the correct user
 if [ "${UID}" -eq 0 ]; then
