@@ -25,7 +25,6 @@ export JAVA_HOME="${CONFLUENCE_INSTALL_DIR}/oracle_java_8"
 #&& sed -i -e "s/EXTDB_NAME/${EXTDB_NAME}/" ${JIRA_HOME}/dbconfig.xml \
 #&& sed -i -e "s/EXTDB_USER/${EXTDB_USER}/" ${JIRA_HOME}/dbconfig.xml \
 #&& sed -i -e "s/EXTDB_PASSWORD/${EXTDB_PASSWORD}/" ${JIRA_HOME}/dbconfig.xml\
-echo "confluence.home=${CONFLUENCE_HOME}" >> ${CONFLUENCE_INSTALL_DIR}/confluence/WEB-INF/classes/confluence-init.properties
 
 # Start CONFLUENCE as the correct user
 if [ "${UID}" -eq 0 ]; then

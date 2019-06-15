@@ -28,4 +28,5 @@ RUN mkdir -p                             ${CONFLUENCE_INSTALL_DIR} \
     && sed -i -e 's/port="8080"/port="8080" secure="${catalinaConnectorSecure}" scheme="${catalinaConnectorScheme}" proxyName="${catalinaConnectorProxyName}" proxyPort="${catalinaConnectorProxyPort}"/' ${CONFLUENCE_INSTALL_DIR}/conf/server.xml \
     && sed -i -e 's/Context path=""/Context path="${catalinaContextPath}"/' ${CONFLUENCE_INSTALL_DIR}/conf/server.xml \
     && mkdir ${CONFLUENCE_INSTALL_DIR}/oracle_java_8 \
-    && curl -L -b "oraclelicense=accept-securebackup-cookie" ${JAVA_DOWNLOAD_URL} | tar -xz --strip-components=1 -C "${CONFLUENCE_INSTALL_DIR}/oracle_java_8"
+    && curl -L -b "oraclelicense=accept-securebackup-cookie" ${JAVA_DOWNLOAD_URL} | tar -xz --strip-components=1 -C "${CONFLUENCE_INSTALL_DIR}/oracle_java_8" \
+    && echo "confluence.home=${CONFLUENCE_HOME}" >> ${CONFLUENCE_INSTALL_DIR}/confluence/WEB-INF/classes/confluence-init.properties
