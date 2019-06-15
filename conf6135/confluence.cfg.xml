@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<confluence-configuration>
+  <setupStep>complete</setupStep>
+  <setupType>custom</setupType>
+  <buildNumber>7901</buildNumber>
+  <properties>
+    <property name="access.mode">READ_WRITE</property>
+    <property name="admin.ui.allow.daily.backup.custom.location">false</property>
+    <property name="admin.ui.allow.manual.backup.download">false</property>
+    <property name="admin.ui.allow.site.support.email">false</property>
+    <property name="atlassian.license.message">AAABLA0ODAoPeNptUMtqwzAQvOsrBL20BwXbedGAoKktioMTl9otBHpRxToRtWWjR2j+vnLcR1pyW Fh2dmZn9qrgFq+cwuEUB7NFNFsEAY6TEkdBeIsSMELLzspW0bhVVe1ACcDXBegD6JvXBWYHXjveL 6BYw6lJuAXa00kwI+EUeaLlwm54A7R272bPu7tdw2U9Em2DhJcdeVgegFrtYBgUlmsLmla8NvCtw NaedEHi18OZQiYFKAPlsYPT5Thfr9lTnC4zVA/QC2jTcyLkdZUFxX029tFJfTyLMO8j5HrHlTTDj aWwrZICDU9IE3pfliuSs+2EpGz7QBhb5ahgG+qLZOF4Ph+HkxB9GfL7WZr8hU6GN655A51Xz8b7o uSHcNnRo9Nizw38f/Yn/bWX4DAtAhQ1B8BPIemwc6vFw3VelFUfuGpcLAIVAICOwAJKNCD3Q8gZb UBwnbu1eDl/X02f3</property>
+    <property name="attachments.dir">${confluenceHome}/attachments</property>
+    <property name="confluence.setup.server.id">BTTJ-OEY4-IEYG-EEJO</property>
+    <property name="confluence.webapp.context.path"></property>
+    <property name="hibernate.c3p0.acquire_increment">1</property>
+    <property name="hibernate.c3p0.idle_test_period">100</property>
+    <property name="hibernate.c3p0.max_size">60</property>
+    <property name="hibernate.c3p0.max_statements">0</property>
+    <property name="hibernate.c3p0.min_size">20</property>
+    <property name="hibernate.c3p0.preferredTestQuery">select 1</property>
+    <property name="hibernate.c3p0.timeout">30</property>
+    <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+    <property name="hibernate.connection.isolation">2</property>
+    <property name="hibernate.connection.password">EXTDB_PASSWORD</property>
+    <property name="hibernate.connection.url">jdbc:mysql://EXTDB_HOST:3306/EXTDB_NAME</property>
+    <property name="hibernate.connection.username">EXTDB_USER</property>
+    <property name="hibernate.database.lower_non_ascii_supported">true</property>
+    <property name="hibernate.dialect">com.atlassian.confluence.impl.hibernate.dialect.MySQLDialect</property>
+    <property name="hibernate.setup">true</property>
+    <property name="jwt.private.key">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</property>
+    <property name="jwt.public.key">MIIBojANBgkqhkiG9w0BAQEFAAOCAY8AMIIBigKCAYEA0Bt3hYLeE9iQkj7TCsmGPOHzpvPvscey9OfMygLnuHm8oPU0uoE/fGxD6XSeQtA/7iZhHU+lfWnBV8B7bHEUD9COvVIDQR55j1ROCsMPbsv+Mn3f2umQq2miqzdwGQSqtlJ+W6lh2VAReXkxf4/MhwG2q6OI2RYoF9oEwepRUEcBNVIGmLc2nno5cAs2skA1+Z6ruPwdDnHatpDl+AakzwQg2G11POvd7f43fO/4kXDHeVrqBXpWq3pBl/NuS9/Wxj2h0Vpho6Q0WyK58v5IFCR4uBTzW6pf35G+FKU8q7ZAZ7tym8xCD4cG5c0A/pVTJkYlinW7TTETOjAdMIoPjtaFIBnmXn9spS4KojLR0wtrtFUtIQJbVfcAGtUg+THfzNEWhvBrPfTaJxmLnQ0gHSg95aRB7jSZyuKbrePV7RbD88DmaTwN1SyW2cPfSzirb5CMHnQTAXKDB3dl7F15VQfYXYB/9BnONw6+UrgnDIPzP6x2qy7HpAC8crtZ3qABAgMBAAE=</property>
+    <property name="lucene.index.dir">${localHome}/index</property>
+    <property name="synchrony.encryption.disabled">true</property>
+    <property name="synchrony.proxy.enabled">true</property>
+    <property name="webwork.multipart.saveDir">${localHome}/temp</property>
+  </properties>
+</confluence-configuration>
