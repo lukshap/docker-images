@@ -12,7 +12,7 @@ EXPOSE 8080
 
 CMD ["/entrypoint.sh", "-fg"]
 
-COPY entrypoint.sh              			                /entrypoint.sh
+COPY entrypoint.sh            			                /entrypoint.sh
 COPY mysql-connector-java-5.1.47.jar           		        ${JIRA_INSTALL_DIR}/lib/
 COPY dbconfig.xml           		                        ${JIRA_HOME}
 
