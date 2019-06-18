@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <jira-database-config>
   <name>defaultDS</name>
   <delegator-name>default</delegator-name>
+  <database-type>mysql</database-type>
   <jdbc-datasource>
-    <url>jdbc:mysql://address=(protocol=tcp)(host=EXTDB_HOST)(port=3306)/EXTDB_NAME?sessionVariables=default_storage_engine=InnoDB</url>
+    <url>jdbc:mysql://EXTDB_HOST:3306/EXTDB_NAME?useUnicode=true&amp;characterEncoding=UTF8&amp;sessionVariables=default_storage_engine=InnoDB</url>
     <driver-class>com.mysql.jdbc.Driver</driver-class>
     <username>EXTDB_USER</username>
     <password>EXTDB_PASSWORD</password>
